@@ -1,1 +1,7 @@
-This is parent form
+<div [formGroup]=parentForm>
+  <div formArrayName="personList" *ngFor="let personForm of f['personList']['controls']; let i=index">
+    <child-form [formControl]="personForm"></child-form>
+  </div>
+</div>
+<br>
+{{f['personList'].value| json}}

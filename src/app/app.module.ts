@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ParentFormComponent } from './parent-form/parent-form.component';
+import { ChildFormComponent } from './parent-form/child-form/child-form.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
     AppComponent, 
     HelloComponent,
-    ParentFormComponent
+    ParentFormComponent,
+    ChildFormComponent
     ],
   bootstrap:    [ AppComponent ]
 })

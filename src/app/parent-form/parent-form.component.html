@@ -1,13 +1,17 @@
 <div [formGroup]=parentForm>
+  <button class='add-btn' (click)=addToList()> Add new person</button>
 	<div class="d-flex" formArrayName="personList" *ngFor="let personForm of f['personList']['controls']; let i=index">
 		<child-form [formControl]="personForm"></child-form>
     <button class="remove-btn" (click)='removeFromList(i)'>X</button>
 	</div>
 
-  <button class='' (click)=addToList()> Add new person</button>
 </div>
 
 <br>
+<br>
+Values
 
-
-{{f['personList'].value| json}}
+<div *ngFor="let person of f['personList'].value"> 
+  <span class="form-value">First name: {{person.firstName}},</span>
+  <span class="form-value">Last name: {{person.lastName}}</span>
+</div>

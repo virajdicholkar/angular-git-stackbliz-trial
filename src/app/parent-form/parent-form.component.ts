@@ -32,7 +32,7 @@ export class ParentFormComponent implements OnInit {
     return this.parentForm.controls; 
   }
 
-  addToList(data){
+  addToList(data = {}){
     const list = this.f['personList'] as FormArray;
     const listItem = this.formBuilder.control(data);
     list.push(listItem);

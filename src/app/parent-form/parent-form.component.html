@@ -1,7 +1,10 @@
 <div [formGroup]=parentForm>
-  <div formArrayName="personList" *ngFor="let personForm of f['personList']['controls']; let i=index">
-    <child-form [formControl]="personForm"></child-form>
-  </div>
+	<div formArrayName="personList" *ngFor="let personForm of f['personList']['controls']; let i=index">
+		<child-form [formControl]="personForm"></child-form>
+	</div>
+
+  <button class='' (click)=addToList()> Add new person</button>
 </div>
+
 <br>
 {{f['personList'].value| json}}
